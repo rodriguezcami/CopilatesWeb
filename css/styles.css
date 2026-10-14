@@ -1,0 +1,275 @@
+/* CSS Copilates - Modo Claro Mejorado + Modo Oscuro Deep Teal */
+:root {
+  /* Modo Claro - Colores Base (más suaves y elegantes que blanco puro) */
+  --bg: #f5faf9;
+  --surface: #ffffff;
+  --alt: #edf5f4;
+  --border: #dbeae8;
+  
+  /* Tonos Teal/Verdes */
+  --primary: #7cc7c2;
+  --primary-h: #67b6b0;
+  --on-primary: #0b3b3a;
+  --teal: #2a7a75;
+  --light: #e6f4f3;
+  --dark: #16302f;
+  --ink: #2a4746;
+  --muted: #516c6b;
+  
+  /* Tonos Violetas/Lilas para acentos */
+  --violet: #8b5cf6;
+  --violet-d: #7c3aed;
+  --violet-l: #f3ebff;
+  --violet-b: #ddd0f6;
+  
+  --r: 14px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; color: var(--dark); line-height: 1.15; letter-spacing: -.01em; }
+h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 14px; }
+h3 { font-size: 22px; margin-bottom: 6px; }
+p { max-width: 62ch; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+section { padding: 84px 0; }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
+
+/* Botones */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 24px; border-radius: 12px; font-weight: 600; font-size: 15px; text-decoration: none; border: 1.5px solid var(--primary); background: var(--primary); color: var(--on-primary); transition: background .2s, transform .2s; }
+.btn:hover { background: var(--primary-h); transform: translateY(-1px); }
+.btn.ghost { background: var(--surface); color: var(--dark); border-color: var(--border); }
+.btn.ghost:hover { border-color: var(--primary); background: var(--light); }
+
+/* Cabecera */
+header { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+.nav { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.brand img { width: 48px; height: auto; display: block; } /* Ajuste tamaño logo referenciado en imágenes */
+.brand span { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 22px; font-weight: 700; color: var(--dark); letter-spacing: -0.5px; } /* Ajuste tipografía logo */
+nav ul { display: flex; gap: 26px; list-style: none; align-items: center; }
+nav a { text-decoration: none; font-size: 14.5px; font-weight: 500; color: var(--muted); }
+nav a:hover { color: var(--dark); }
+nav .btn { background: var(--violet); border-color: var(--violet); color: #fff; padding: 9px 18px; font-size: 14px; } /* Botón Mi cuenta en Lila */
+nav .btn:hover { background: var(--violet-d); border-color: var(--violet-d); }
+.burger { display: none; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; font: inherit; font-weight: 600; color: var(--dark); cursor: pointer; }
+
+/* Hero / Inicio */
+.hero { padding: 56px 0 84px; background: var(--bg); }
+.hero .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+.eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: .03em; color: var(--teal); background: var(--light); padding: 6px 14px; border-radius: 999px; margin-bottom: 16px; text-transform: uppercase; }
+.hero h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(40px, 6vw, 64px); letter-spacing: -1px; margin-bottom: 20px; line-height: 1.1; }
+.hero h1 em { font-style: normal; color: var(--primary); }
+.hero p.lead { font-size: 18px; color: var(--muted); margin-bottom: 30px; }
+.pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 26px; }
+.pill { border: none; background: var(--light); color: var(--teal); padding: 8px 16px; border-radius: 999px; font-size: 13.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.stats { display: flex; flex-wrap: wrap; gap: 14px 40px; margin-top: 34px; padding-top: 24px; border-top: 1px solid var(--border); }
+.stats b { display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 32px; font-weight: 800; color: var(--dark); line-height: 1.1; }
+.stats span { font-size: 13.5px; color: var(--muted); }
+
+/* Lo que hacemos / Clases */
+.clases { background: var(--primary); } /* Fondo verde claro según captura */
+.clases .head h2 { color: var(--dark); }
+.clases .head p { color: var(--dark); opacity: 0.8; }
+.serv { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 22px; }
+.clases .card { background: var(--surface); border: none; border-radius: 20px; padding: 32px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+
+.clases .card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+.card-icon { width: 44px; height: 44px; background: var(--violet-l); color: var(--violet-d); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+
+.clases .card p { color: var(--muted); font-size: 15px; }
+
+/* Galería */
+.galeria { background: var(--surface); }
+.galeria .head p { color: var(--muted); }
+.galhead { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 22px; flex-wrap: wrap; }
+.gnav { display: flex; gap: 8px; }
+.gnav button { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface); color: var(--dark); font-size: 20px; cursor: pointer; }
+.gnav button:hover { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
+.gal { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 14px; scrollbar-width: thin; scrollbar-color: var(--primary) var(--alt); }
+.gal button { flex: 0 0 auto; height: min(60vh, 420px); border: 0; padding: 0; background: var(--alt); cursor: zoom-in; border-radius: var(--r); overflow: hidden; scroll-snap-align: start; }
+.gal img { height: 100%; width: auto; display: block; object-fit: cover; }
+dialog.lb { border: 0; background: transparent; max-width: 94vw; max-height: 94vh; padding: 0; margin: auto; }
+dialog.lb::backdrop { background: rgba(15, 28, 27, .88); }
+dialog.lb img { max-width: 94vw; max-height: 88vh; border-radius: 12px; margin: auto; }
+dialog.lb form { text-align: right; margin-bottom: 8px; }
+dialog.lb .x { background: var(--surface); border: none; color: var(--dark); border-radius: 10px; padding: 8px 14px; font: inherit; font-weight: 600; cursor: pointer; }
+
+/* Formación */
+.formacion { background: var(--violet-l); color: var(--dark); } /* Lila claro según captura */
+.formacion .eyebrow { background: transparent; color: var(--violet-d); padding: 0; letter-spacing: 1px; margin-bottom: 12px; }
+.formacion h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 40px; color: var(--dark); margin-bottom: 16px; }
+.formacion p { color: var(--muted); font-size: 18px; }
+.fdatos { display: flex; flex-wrap: wrap; gap: 20px 48px; margin: 32px 0; }
+.fdatos b { display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 28px; font-weight: 800; color: var(--violet-d); line-height: 1.1; }
+.fdatos span { font-size: 15px; color: var(--muted); }
+.formacion .btn { background: var(--violet-d); border-color: var(--violet-d); color: #fff; border-radius: 999px; padding: 14px 32px; font-size: 16px; }
+
+/* Opiniones */
+.opisec { background: var(--surface); }
+.opisec .eyebrow { background: transparent; color: var(--teal); padding: 0; margin-bottom: 12px; }
+.opisec .head h2 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 36px; }
+.ops { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 32px; }
+.op { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 32px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+.op .st { color: #f59e0b; font-size: 17px; margin-bottom: 16px; letter-spacing: 2px; } /* Estrellas doradas */
+.op p { font-size: 16px; margin-bottom: 24px; color: var(--ink); }
+.op b { color: var(--dark); font-size: 16px; font-weight: 700; display: block; }
+.op small { color: var(--muted); font-size: 14px; margin-left: 0; }
+
+/* Alumna Box */
+.alumna { background: var(--bg); padding-top: 0; }
+.alumna-box { background: #1a3633; border: none; border-radius: 24px; padding: 48px; display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between; color: #fff; } /* Fondo verde muy oscuro */
+.alumna-box h2 { color: #fff; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; margin-bottom: 16px; }
+.alumna-box p { color: rgba(255,255,255,0.8); margin-bottom: 24px; font-size: 16px; }
+.alumna-box ul { list-style: none; display: grid; gap: 12px; }
+.alumna-box li { padding-left: 24px; position: relative; color: #fff; font-weight: 500; }
+.alumna-box li::before { content: "•"; position: absolute; left: 0; color: var(--primary); font-size: 20px; line-height: 1.2; }
+.alumna-box .btn { background: var(--primary); border-color: var(--primary); color: var(--on-primary); border-radius: 999px; padding: 14px 32px; }
+
+/* Footer */
+footer { padding: 48px 0 32px; background: var(--surface); font-size: 14px; color: var(--muted); border-top: 1px solid var(--border); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center; }
+footer .brand span { font-size: 20px; }
+
+
+
+/* Fotos de la portada (Estructura restaurada) */
+.hero-fotos { position: relative; width: 100%; max-width: 470px; height: 540px; margin: 0 auto; }
+.hero-fotos img { position: absolute; object-fit: cover; height: auto; }
+.hero-fotos .f1 { right: 0; top: 0; width: 62%; aspect-ratio: 3/4; border-radius: 220px 220px 24px 24px; object-position: 50% 45%; box-shadow: 0 24px 44px rgba(53,32,111,.22); }
+.hero-fotos .f2 { left: 0; bottom: 0; width: 58%; aspect-ratio: 3/4; border-radius: 24px 24px 220px 220px; object-position: 50% 32%; border: 6px solid var(--surface); box-shadow: 0 24px 44px rgba(53,32,111,.22); }
+.hero-fotos .badge { left: 4%; top: 5%; width: 104px; height: auto; object-fit: contain; filter: drop-shadow(0 10px 18px rgba(53,32,111,.28)); }
+@media(max-width:900px) { .hero-fotos { height: 440px; max-width: 380px; } .hero-fotos .badge { width: 84px; } }
+
+/* Estructuras generales faltantes */
+.sedes-sec { background: var(--violet-l); }
+.sedes-sec .head p { color: var(--muted); }
+.sedes { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 22px; margin-bottom: 28px; margin-top: 34px; }
+.sede { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 28px; }
+.sede-tag { display: inline-block; font-size: 12.5px; font-weight: 600; color: var(--violet); background: var(--violet-l); padding: 4px 10px; border-radius: 999px; margin-bottom: 12px; }
+.sede h3 { font-size: 22px; margin-bottom: 6px; }
+.sede p { color: var(--muted); font-size: 15px; }
+.sede a { display: inline-block; margin-top: 12px; color: var(--violet); font-weight: 600; font-size: 14.5px; }
+.contacto-linea { margin-top: 18px; font-size: 14.5px; color: var(--muted); }
+.pasos { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 16px; margin: 0 0 30px; }
+.paso { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 22px 24px; }
+.paso b { display: block; font-family: 'Playfair Display',serif; font-size: 22px; font-weight: 600; margin-bottom: 4px; color: var(--dark); }
+.paso span { font-size: 14.5px; color: var(--muted); }
+[hidden] { display: none !important; }
+.g-sum { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 20px; color: var(--muted); font-size: 15px; }
+.g-sum b { font-family: 'Playfair Display',serif; font-size: 34px; color: var(--dark); font-weight: 600; }
+.g-sum a { color: var(--teal); font-weight: 600; }
+.op-vacio { max-width: 640px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 28px; margin-bottom: 24px; }
+.op-vacio p { margin-bottom: 18px; color: var(--muted); font-size: 15px; }
+.opisec .opform { max-width: 640px; margin-top: 36px; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 32px; }
+.opform label { display: block; font-size: 13.5px; font-weight: 600; margin: 14px 0 6px; color: var(--dark); }
+.opform input[type=text], .opform textarea { width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px; font: inherit; background: var(--bg); }
+.rate { display: flex; flex-direction: row-reverse; justify-content: flex-end; gap: 4px; border: 0; }
+.rate input { position: absolute; opacity: 0; }
+.rate label { font-size: 32px; line-height: 1; color: #c3d4d2; cursor: pointer; margin: 0; }
+.rate input:checked~label, .rate label:hover, .rate label:hover~label { color: #f59e0b; }
+.opform .btn { margin-top: 18px; }
+.hp { position: absolute; left: -9999px; }
+
+/* WhatsApp */
+.wa { position: fixed; right: 18px; bottom: 18px; z-index: 60; width: 56px; height: 56px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 8px 20px rgba(0,0,0,.2); }
+.wa svg { width: 30px; height: 30px; fill: #fff; }
+
+/* Media Queries */
+@media(max-width: 900px) {
+  section { padding: 60px 0; }
+  .hero .wrap { grid-template-columns: 1fr; gap: 36px; }
+  .alumna-box { padding: 32px 24px; flex-direction: column; align-items: flex-start; }
+  .burger { display: block; }
+  nav ul { display: none; position: absolute; top: 84px; left: 0; right: 0; background: var(--surface); flex-direction: column; align-items: stretch; padding: 16px 24px 22px; border-bottom: 1px solid var(--border); gap: 16px; }
+  nav ul.open { display: flex; }
+  nav .btn { width: 100%; text-align: center; }
+}
+
+/* =========================================================================
+   MODO OSCURO (DEEP TEAL) - Basado en la captura solicitada
+   ========================================================================= */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Fondo principal: Verde Teal muy oscuro */
+    --bg: #0d1b1a; 
+    --surface: #142927;
+    --alt: #1a3633;
+    --border: #244240;
+    
+    /* Textos: Blanco para títulos, gris azulado para texto regular */
+    --dark: #ffffff;
+    --ink: #d4e2e1;
+    --muted: #95b3b1;
+    
+    /* Acentos: Celeste vibrante */
+    --primary: #83d1cb;
+    --primary-h: #6bbbb5;
+    --on-primary: #051413;
+    
+    /* Botones/Acentos lila */
+    --violet: #a88df8;
+    --violet-d: #8e73e6;
+    --violet-l: #201a33;
+    --violet-b: #34285e;
+  }
+
+  /* Cabecera oscura semitransparente */
+  header { background: rgba(13, 27, 26, 0.94); border-bottom-color: var(--border); }
+  nav ul { background: var(--surface); }
+  
+  /* Botón Mi Cuenta en lila oscuro */
+  nav .btn { background: var(--violet); border-color: var(--violet); color: #160f29; }
+  nav .btn:hover { background: var(--violet-d); border-color: var(--violet-d); }
+
+  /* Asegurar que los botones Ghost se vean bien */
+  .btn.ghost { background: var(--surface); color: var(--dark); border-color: var(--border); }
+  .btn.ghost:hover { border-color: var(--primary); color: var(--on-primary); background: var(--primary); }
+
+  /* Logo texto en blanco */
+  .brand span { color: var(--dark); }
+
+  /* Ajustes específicos de secciones para modo oscuro */
+  .hero { background: var(--bg); }
+  
+  /* Título inicio: "movimiento" celeste y no cursivo */
+  .hero h1 em { color: var(--primary); font-style: normal; }
+  
+  /* Píldoras inicio modo oscuro */
+  .pill { background: var(--alt); color: var(--primary); }
+
+  /* Clases en modo oscuro */
+  
+  /* Clases / Servicios en Modo Oscuro (Fondo turquesa y tarjetas Deep Teal) */
+  .clases { background: var(--primary) !important; }
+  .clases .head h2, .clases .head p, .clases .eyebrow { color: #0d1b1a !important; }
+  .clases .card { background: var(--surface) !important; border: none !important; }
+  .clases .card h3 { color: #ffffff !important; }
+  .clases .card p { color: var(--ink) !important; }
+  .clases .card .card-icon { background: var(--violet-l) !important; color: var(--violet) !important; }
+
+  
+  /* Formación en modo oscuro (ajustando el lila claro) */
+  .formacion { background: var(--violet-l); }
+  .formacion .eyebrow { color: var(--violet); }
+  .fdatos b { color: var(--violet); }
+  .formacion .btn { background: var(--violet); color: #160f29; }
+
+  /* Elementos comunes que deben ser superficies oscuras */
+  .galeria, .opisec, footer { background: var(--bg); }
+  .op { background: var(--surface); border-color: var(--border); }
+
+  /* Alumna Box en modo oscuro (mantener verde oscuro o asimilarlo al surface) */
+  .alumna { background: var(--bg); }
+  .alumna-box { background: var(--surface); border: 1px solid var(--border); }
+
+  /* Formularios e interacciones modales */
+  dialog.lb .x { background: var(--surface); color: var(--dark); border-color: var(--border); }
+
+  /* Suavizar imágenes */
+  img { filter: brightness(0.9); }
+}
